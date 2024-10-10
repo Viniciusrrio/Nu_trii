@@ -1,0 +1,29 @@
+<ion-content class="ion-padding register-background">
+  <div class="register-container">
+    <ion-input placeholder="Nome Completo" class="register-input"></ion-input>
+    <ion-input placeholder="Data de Nascimento" class="register-input"></ion-input>
+    <ion-input placeholder="Peso" class="register-input"></ion-input>
+    <ion-input placeholder="CPF" class="register-input"></ion-input>
+    <ion-input placeholder="Celular" class="register-input"></ion-input>
+    <ion-input placeholder="Email" class="register-input"></ion-input>
+    <ion-button expand="full" (click)="register()">Registrar</ion-button>
+    
+    <!-- Novo campo de busca de alimentos e botão de pesquisa -->
+    <ion-item class="register-input">
+      <ion-label position="floating">Nome do Alimento</ion-label>
+      <ion-input [(ngModel)]="query" placeholder="Ex: Banana"></ion-input>
+    </ion-item>
+    <ion-button expand="full" (click)="searchFood()">Buscar Informação Nutricional</ion-button>
+
+    <!-- Exibir informações nutricionais, se disponíveis -->
+    <div *ngIf="foodData">
+      <h2>Informações Nutricionais:</h2>
+      <p>Nome: {{ foodData.food_name }}</p>
+      <p>Calorias: {{ foodData.nf_calories }} kcal</p>
+      <p>Proteínas: {{ foodData.nf_protein }} g</p>
+      <p>Carboidratos: {{ foodData.nf_total_carbohydrate }} g</p>
+      <p>Gorduras: {{ foodData.nf_total_fat }} g</p>
+    </div>
+  </div>
+</ion-content>
+

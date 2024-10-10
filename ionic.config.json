@@ -1,0 +1,7 @@
+{
+  "name": "nu_trii",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
